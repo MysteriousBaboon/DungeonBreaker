@@ -8,7 +8,7 @@
         "97158dd2-f41b-4fc7-a6a7-85149936a3b6"
     ],
     "filterType": "GMSprite",
-    "folderName": "deco",
+    "folderName": "Decoration",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

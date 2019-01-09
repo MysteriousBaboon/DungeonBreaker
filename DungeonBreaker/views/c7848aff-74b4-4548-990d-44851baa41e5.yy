@@ -12,7 +12,7 @@
         "5cf97701-9434-4016-9689-1bc899246872"
     ],
     "filterType": "GMObject",
-    "folderName": "parent",
+    "folderName": "Parents",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

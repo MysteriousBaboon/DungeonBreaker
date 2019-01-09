@@ -2,7 +2,7 @@
     "id": "51c4883a-3618-4c8b-b0d4-959cbb1c3506",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_turret",
+    "name": "Obj_Turret",
     "eventList": [
         {
             "id": "56ba6d2d-14b2-4903-81da-697acd0c5b71",

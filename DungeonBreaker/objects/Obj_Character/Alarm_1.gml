@@ -1,0 +1,1 @@
+FiringShuriken = false;

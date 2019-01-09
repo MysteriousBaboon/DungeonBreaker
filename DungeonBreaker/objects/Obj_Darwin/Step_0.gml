@@ -1,5 +1,5 @@
-if (Player == 1) Scr_Darwin1()
-if (Player == 2) Scr_Darwin2()
+if (Player == 1) Scr_DarwinP1()
+if (Player == 2) Scr_DarwinP2()
 
 if (cd >= 1)
 {

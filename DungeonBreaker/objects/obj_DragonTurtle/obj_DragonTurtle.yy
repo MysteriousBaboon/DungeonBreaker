@@ -2,7 +2,7 @@
     "id": "1f234aa6-1d26-4761-9076-4c0887a0fa72",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_DragonTurtle",
+    "name": "Obj_DragonTurtle",
     "eventList": [
         {
             "id": "6f773091-ddc2-41e5-b8b8-c76669ab1c88",

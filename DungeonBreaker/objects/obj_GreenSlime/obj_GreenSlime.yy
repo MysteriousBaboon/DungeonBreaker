@@ -2,7 +2,7 @@
     "id": "2fe4b661-772f-4bd4-babf-c09f84f52a0a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_GreenSlime",
+    "name": "Obj_GreenSlime",
     "eventList": [
         {
             "id": "8835ae1e-1b5b-498d-b2db-ebcb996fa720",

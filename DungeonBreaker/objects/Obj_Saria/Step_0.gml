@@ -1,5 +1,5 @@
-if (Player == 1) Scr_move_Saria1()
-if (Player == 2) Scr_move_Saria2()
+if (Player == 1) Scr_SariaP1()
+if (Player == 2) Scr_SariaP2()
 
 
 if (cd >= 1)

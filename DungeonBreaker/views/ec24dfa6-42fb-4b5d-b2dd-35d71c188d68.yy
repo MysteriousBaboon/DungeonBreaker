@@ -11,7 +11,7 @@
         "a60a714c-f464-4e85-8fe5-12f64a743640"
     ],
     "filterType": "GMObject",
-    "folderName": "misc",
+    "folderName": "Miscellaneous",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
