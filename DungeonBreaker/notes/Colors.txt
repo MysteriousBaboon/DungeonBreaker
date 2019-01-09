@@ -1,0 +1,5 @@
+Renaud , Slavik = Red
+Saria , drow = Green 
+Ivanhoe, lancelot = orange 
+Darwin = yellow 
+Mage = blue 

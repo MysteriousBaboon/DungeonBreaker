@@ -1,0 +1,1 @@
+instance_create_layer(x,y,"Character",Player2_0)

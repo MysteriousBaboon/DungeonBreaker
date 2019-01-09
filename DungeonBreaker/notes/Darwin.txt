@@ -1,0 +1,5 @@
+R == saut
+E == Aceelerateur de proj
+
+Clique Gauche == tir tourelle 
+Clique droit  == pause tourelle
