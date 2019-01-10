@@ -12,29 +12,29 @@ if (global.CurrentPlace == "TitleScreen")
 		if (Title_Screen == 2) draw_sprite(spr_pointeur,image_index,730,780);
 		if (Title_Screen == 3) draw_sprite(spr_pointeur,image_index,730,920);
 		//Check Where the Pointeur is and where we should go when we press enter
-		if (keyboard_check_pressed(ord(global.DownControlP1)))
+		if (global.DownMoveP1)
 			{
 				if (Title_Screen ==3) Title_Screen = -1;
 				if (Title_Screen < 3) Title_Screen += 1; 
 			}
-		if (keyboard_check_pressed(ord(global.UpControlP1)))
+		if (global.UpMoveP1)
 			{
 				if (Title_Screen == 0) Title_Screen = 4;
 				if (Title_Screen > 0) Title_Screen -= 1; 
 			}
-		if (keyboard_check_pressed(ord(global.EntryControlP1)) && Title_Screen == 0) 
+		if ((global.EntryP1 == true) && Title_Screen == 0) 
 			{
 				global.CurrentPlace = "TitleScreen_PVE";
 			}
-		if (keyboard_check_pressed(ord(global.EntryControlP1)) && Title_Screen == 1 ) 
+		if ((global.EntryP1 == true) && Title_Screen == 1 ) 
 			{
 				global.CurrentPlace = "TitleScreen_PVP";
 			}
-		if (keyboard_check_pressed(ord(global.EntryControlP1)) && Title_Screen == 2 ) 
+		if ((global.EntryP1 == true) && Title_Screen == 2 ) 
 			{
 				global.CurrentPlace = "Settings";
 			}
-		if (keyboard_check_pressed(ord(global.EntryControlP1)) && Title_Screen == 3 )
+		if ((global.EntryP1 == true) && Title_Screen == 3 )
 			{
 				game_end()
 			}
@@ -42,24 +42,25 @@ if (global.CurrentPlace == "TitleScreen")
 	////////////////////////////////////////////////////////////	Script Pve
 if(global.CurrentPlace == "TitleScreen_PVE")
 	{
+		
 		//Drawing the Interface for the pve and the pointeur
 		draw_sprite(Spr_Prologue,image_index,960,700);
 		if (Game_Selection == 0)draw_sprite(spr_pointeur,image_index,730,507);
 		if (Game_Selection == 1)draw_sprite(spr_pointeur,image_index,730,662);
 		if (Game_Selection == 2)draw_sprite(spr_pointeur,image_index,730,823);
 
-		if (keyboard_check_pressed(ord(global.DownControlP1)))
+		if (global.DownMoveP1)
 			{
 				if (Game_Selection == 2) Game_Selection = -1;
 				if (Game_Selection < 2) Game_Selection += 1; 
 			}
-		if (keyboard_check_pressed(ord(global.UpControlP1)))
+		if (global.UpMoveP1)
 			{
 				if (Game_Selection == 0) Game_Selection = 3;
 				if (Game_Selection > 0) Game_Selection -= 1; 
 			}
-				if (Game_Selection == 2 && keyboard_check_pressed(global.EntryControlP1)) room_goto(TitleScreen);
-				if (Game_Selection == 0 && keyboard_check_pressed(global.EntryControlP1)) room_goto(Mode)
+		if (Game_Selection == 2 && (global.EntryP1 == true))global.CurrentPlace = "TitleScreen";
+		if (Game_Selection == 4 && (global.EntryP1 == false))global.CurrentPlace = "Pveeeee";
 	}
 
 
@@ -123,30 +124,30 @@ if (global.CurrentPlace == "Settings")
 
 		if(!ControlSet)
 			{
-				if (keyboard_check_pressed(ord(global.DownControlP1)))
+				if (global.DownMoveP1)
 					{
 						if (Settings1I ==8) Settings1I = -1;
 						if (Settings1I < 9) Settings1I += 1; 
 					}
 			
-				if (keyboard_check_pressed(ord(global.UpControlP1)))
+				if (global.UpMoveP1)
 					{
 				if (Settings1I == 0) Settings1I = 9;
 				if (Settings1I > 0) Settings1I -= 1; 
 					}
 		
-				if (keyboard_check_pressed(ord(global.RightControlP1)))
+				if (global.RightMoveP1)
 					{
 						if (Settings1P < 2) Settings1P++;
 						if (Settings1P == 2) Settings1P = 0; 	
 					}
 				
-				if (keyboard_check_pressed(ord(global.LeftControlP1)))
+				if (global.LeftMoveP1)
 					{	
 						if (Settings1P > -1) Settings1P--; 	
 						if (Settings1P == -1) Settings1P = 1;	
 					}
 			}
 			
-		if (Settings1I == 6 && keyboard_check(ord(EntryControlP1)))global.CurrentPlace = "TitleScreen";
+		if (Settings1I == 6 && global.EntryP1)global.CurrentPlace = "TitleScreen";
 	}

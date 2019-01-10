@@ -1,12 +1,12 @@
 // S'assurer que tout ce stop bien
-if (!UpMoveP1 && !DownMoveP1 && !LeftMoveP1 && !RightMoveP1)
+if (!global.UpMoveP1 && !global.DownMoveP1 && !global.LeftMoveP1 && !global.RightMoveP1)
 	{
 		image_speed = 0;
 		image_index = 0;
 	}
 
 // Bouger vers le haut
-if (UpMoveP1) 
+if (global.UpMoveP1) 
 	{
 		image_speed = 1;
 		y -= VerticalSpeed
@@ -14,27 +14,27 @@ if (UpMoveP1)
 	}
 
 //Bouger vers le bas
-if (DownMoveP1) 
+if (global.DownMoveP1) 
 	{
 			image_speed = 1;
 			y += VerticalSpeed
 			sprite_index = spr_Darwin_MovingDown;
 	}
 //Bouger vers la gauche
-if(LeftMoveP1)
+if(global.LeftMoveP1)
 	{
 			image_speed = 1;
 			x -= HorizontalSpeed
 			sprite_index = spr_Darwin_MovingLeft;
 	}
 //Bouger vers la droite
-if (RightMoveP1) 
+if (global.RightMoveP1) 
 	{
 				image_speed = 1;
 				x += HorizontalSpeed
 				sprite_index = spr_Darwin_MovingRight;
 	}	
-if (LeftSpellP1)
+if (global.LeftSpellP1)
 	{
 		
 		if (cd == 0 )
