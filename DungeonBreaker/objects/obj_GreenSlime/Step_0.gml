@@ -8,5 +8,5 @@ x += sign(obj_player.x -x)*spd;
 y += sign(obj_player.y -y)*spd;
 }
 }
-if (sprite_index == spr_GreenSlime_WakinUp  && image_index > image_number - 1) sprite_index =spr_GreenSlime_MoveDown;
+if (sprite_index == spr_GreenSlime_WakinUCharacterSelec_P && image_index > image_number - 1) sprite_index =spr_GreenSlime_MoveDown;
 if (Health == 0) instance_destroy(id)

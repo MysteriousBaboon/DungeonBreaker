@@ -1,5 +1,5 @@
-// S'assurer que tout ce stop bien
-if (!UpMoveP2 && !DownMoveP2 && !LeftMoveP2 && !RightMoveP2)
+// S'assurer que tout ce stoCharacterSelec_Pbien
+if (!global.UpMoveP2 && !global.DownMoveP2 && !global.LeftMoveP2 && !global.RightMoveP2)
 	{
 		image_speed = 0;
 		image_index = 0;
@@ -7,7 +7,7 @@ if (!UpMoveP2 && !DownMoveP2 && !LeftMoveP2 && !RightMoveP2)
 
 
 // Bouger vers le haut
-if (UpMoveP2) 
+if (global.UpMoveP2) 
 	{
 		image_speed = 1;
 		y -= VerticalSpeed
@@ -16,7 +16,7 @@ if (UpMoveP2)
 
 	
 //Bouger vers le bas
-if (DownMoveP2) 
+if (global.DownMoveP2) 
 	{
 			image_speed = 1;
 			y += VerticalSpeed
@@ -28,7 +28,7 @@ if (DownMoveP2)
 
 
 //Bouger vers la gauche
-if(LeftMoveP2)
+if(global.LeftMoveP2)
 	{
 			image_speed = 1;
 			x -= HorizontalSpeed
@@ -39,7 +39,7 @@ if(LeftMoveP2)
 
 
 //Bouger vers la droite
-if (RightMoveP2) 
+if (global.RightMoveP2) 
 	{
 				image_speed = 1;
 				x += HorizontalSpeed

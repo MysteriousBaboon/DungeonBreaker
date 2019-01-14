@@ -1,5 +1,5 @@
 R == roulade
 E == Enfonce l'eppe dans le sol et fais une onde choc
 
-Clique Gauche == Coup vers la gauche dgt et destru des proj
-Clique droit  == coup vers la droite renvoie des proj , knockback
+Clique Gauche == CouCharacterSelec_Pvers la gauche dgt et destru des proj
+Clique droit  == couCharacterSelec_Pvers la droite renvoie des proj , knockback

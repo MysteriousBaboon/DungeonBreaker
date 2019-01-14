@@ -1,5 +1,5 @@
 R == Tournoiemment de lane et destructio ndes projectiles qui touche pendant plusieurs seconde
 E == Tour autour de lui et detruit les projectiles
 
-Clique Gauche == charge de Coup de lance en avant
+Clique Gauche == charge de CouCharacterSelec_Pde lance en avant
 Clique droit  == Charge de coupe horizontal

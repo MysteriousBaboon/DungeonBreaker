@@ -1,4 +1,4 @@
-// S'assurer que tout ce stop bien
+// S'assurer que tout ce stoCharacterSelec_Pbien
 if (!UpMoveP1 && !DownMoveP1 && !LeftMoveP1 && !RightMoveP1)
 	{
 		image_speed = 0;

@@ -1,5 +1,5 @@
 event_inherited()
-// Wake up and attack
+// Wake uCharacterSelec_Pand attack
 
 if (distance_to_object(obj_player) <= 150)
 	{
@@ -27,7 +27,7 @@ if (distance_to_object(obj_player) <= 150)
 	}
 	
 // Quand il a finis de se reveiller on swap
-if (sprite_index == spr_DragonTurtle_WakingUp  && image_index > image_number - 1) sprite_index =spr_DragonTurtle_Iddle
+if (sprite_index == spr_DragonTurtle_WakingUCharacterSelec_P && image_index > image_number - 1) sprite_index =spr_DragonTurtle_Iddle
 
 
 if (cd >= 1)

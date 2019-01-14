@@ -1,6 +1,6 @@
 /// Initialize Variable
 event_inherited()
-MovingUp = 0;
+MovingUCharacterSelec_P= 0;
 MovingDown = 0;
 MovingLeft = 0;
 MovingRight = 0;

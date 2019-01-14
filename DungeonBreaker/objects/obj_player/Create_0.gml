@@ -1,1 +1,0 @@
-obj_interface_FirstLevel.number_of_player +=1;

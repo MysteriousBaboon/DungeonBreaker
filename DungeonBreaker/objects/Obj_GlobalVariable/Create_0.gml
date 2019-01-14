@@ -22,13 +22,13 @@ global.Cursor1HSpeed = 5;
 global.Cursor1VSpeed = 5;
 
 // Joueur 1 Control
-global.LeftControlP1 = chr(81);
-global.RightControlP1  = chr(68);
-global.UpControlP1 = chr(90);
-global.DownControlP1 = chr(83);
-global.LeftSpellControlP1 = chr(65);
-global.RightSpellControlP1 = chr(69);
-global.EntryControlP1 = chr(84);
+global.LeftControlP1 = ord(chr(81));
+global.RightControlP1  = ord(chr(68));
+global.UpControlP1 = ord(chr(90));
+global.DownControlP1 = ord(chr(83));
+global.LeftSpellControlP1 = ord(chr(65));
+global.RightSpellControlP1 = ord(chr(69));
+global.EntryControlP1 = ord(chr(84));
 
 //Curseur du J1 Control
 global.LeftControlC1 = chr(74);
@@ -63,13 +63,13 @@ global.Cursor1HSpeed = 5;
 global.Cursor1VSpeed = 5;
 
 // Joueur 2 Control
-global.LeftControlP2 = chr(81);
-global.RightControlP2  = chr(68);
-global.UpControlP2 = chr(90);
-global.DownControlP2 = chr(83);
+global.LeftControlP2 = vk_left;
+global.RightControlP2  = vk_right;
+global.UpControlP2 = vk_up;
+global.DownControlP2 = vk_down;
 global.LeftSpellControlP2 = chr(65);
 global.RightSpellControlP2 = chr(69);
-global.EntryControlP2 = chr(84);
+global.EntryControlP2 = vk_enter;
 
 //Curseur du J2 Control
 global.LeftControlC2 = chr(74);

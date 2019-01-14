@@ -1,5 +1,5 @@
 
-2 perso a jouer en meme temps et swap rapidement
+2 perso a jouer en meme temps et swaCharacterSelec_Prapidement
 
 Barre de Score
 

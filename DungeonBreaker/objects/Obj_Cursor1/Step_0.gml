@@ -1,18 +1,18 @@
-if(UpMoveC1) 
+if(global.UpMoveC1) 
 	{
 		y -= Cursor1VSpeed		
 	}
-if(DownMoveC1) 
+if(global.DownMoveC1) 
 	{
 		
 		y += Cursor1VSpeed		
 	}
-if(LeftMoveC1) 
+if(global.LeftMoveC1) 
 	{
 		
 		x -= Cursor1HSpeed		
 	}
-if(RightMoveC1) 
+if(global.RightMoveC1) 
 	{
 		
 		x += Cursor1HSpeed		

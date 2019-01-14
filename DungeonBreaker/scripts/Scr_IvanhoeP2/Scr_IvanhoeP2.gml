@@ -1,10 +1,10 @@
 //Check Up
 if (keyboard_check(vk_up) or keyboard_check(ord("Z")))
-MovingUp = 1;
+MovingUCharacterSelec_P= 1;
 
 if (keyboard_check_released(vk_up) or keyboard_check_released(ord("Z")))
 {
-MovingUp = 0 ;
+MovingUCharacterSelec_P= 0 ;
 image_speed = 0;
 }
 
@@ -36,7 +36,7 @@ image_speed = 0;
 }
 
 // BOouger vers le haut
-if (MovingUp == 1) 
+if (MovingUCharacterSelec_P== 1) 
 	{
 		image_speed = 1;
 	y -= VerticalSpeed

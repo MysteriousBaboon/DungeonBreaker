@@ -1,0 +1,1 @@
+NewCurrentPlace = false;
