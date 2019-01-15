@@ -2,7 +2,7 @@
     "id": "c2348e2c-a155-4926-aac2-347cd1f24b08",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "Spr_Prologue",
+    "name": "Spr_GameSelection",
     "For3D": false,
     "HTile": false,
     "VTile": false,

@@ -134,7 +134,7 @@ if(global.CurrentPlace == "TitleScreen_PVE")
 	{	
 		Title_Screen = 0;
 		//Drawing the Interface for the pve and the pointeur
-		draw_sprite(Spr_Prologue,image_index,960,700);
+		draw_sprite(Spr_GameSelection,image_index,960,700);
 		if (Game_Selection_PVE == 0)draw_sprite(spr_pointeur,image_index,730,507);
 		if (Game_Selection_PVE == 1)draw_sprite(spr_pointeur,image_index,730,662);
 		if (Game_Selection_PVE == 2)draw_sprite(spr_pointeur,image_index,730,823);
@@ -188,16 +188,9 @@ if(global.CurrentPlace == "TitleScreen_PVP")
 
 
 //Pve SelectionPerso Solo
-if(global.CurrentPlace == "CharacterSelection_PVE")
-	{
-		
-		global.EntryP1 = false;
-		global.EntryP2 = false;
-		room_goto(CharacterSelection)
-		if((CharacterSelec_P1 == 2 or CharacterSelec_P2 == 2) && (global.EntryControlP1 or global.EntryControlP2))
-					{	
-						global.CurrentPlace = "TitleScreen";		
-					}
+
+if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
+	{	
 		if(CharacterSelec_P1 == 2 && global.EntryP1)room_goto(TitleScreen);
 		if(CharacterSelec_P2 == 2 && global.EntryP2)room_goto(TitleScreen);
 		if(CharacterSelec_I1 == 0 && CharacterSelec_P1 == 0 && global.EntryP1)
@@ -218,12 +211,49 @@ if(global.CurrentPlace == "CharacterSelection_PVE")
 			}
 		if (CharacterSelec_I1 == 1 && CharacterSelec_P1 == 1 && global.EntryP1) 
 			{
-					global.Player1_0 = Obj_Ashlea;
+					global.Player1_0 = Obj_Ashlae;
 			}	
-		if(global.Player1_0 != 0)global.CurrentPlace = "First_Level";
+
 	}
+// P2
+if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
+	{	
+		if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
+		if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
+		if(CharacterSelec_I2 == 0 && CharacterSelec_P2 == 0 && global.EntryP2)
+			{
+					global.Player2_0 = Obj_Darwin;
+			}
+		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 0 && global.EntryP2) 
+			{
+					global.Player2_0 = Obj_Ivanhoe;	
+			}	
+		if (CharacterSelec_I2 == 2 && CharacterSelec_P2 == 0 && global.EntryP2) 
+			{
+					global.Player2_0 = Obj_Renaud;
+			}
+		if (CharacterSelec_I2 == 0 && CharacterSelec_P2 == 1 && global.EntryP2) 
+			{
+					global.Player2_0 = Obj_Saria;
+			}
+		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 1 && global.EntryP2) 
+			{
+					global.Player2_0 = Obj_Ashlae;
+			}	
+	}
+if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(FirstLevel_Forest);		
+	
 	
 
+			
+	
+
+		
+	
+	
+	
+	
+	
 	
 	
 	

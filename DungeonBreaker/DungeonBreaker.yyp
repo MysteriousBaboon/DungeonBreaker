@@ -335,6 +335,14 @@
             }
         },
         {
+            "Key": "31b7ffc8-249e-4900-9a4f-c20f2d7e38f3",
+            "Value": {
+                "id": "4efadfab-2fcd-4ae3-909d-8f7beccfb1f9",
+                "resourcePath": "scripts\\Scr_DarwinP1\\Scr_DarwinP1.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3328cddf-7cef-4bdf-adf6-8fc11b8803fb",
             "Value": {
                 "id": "c8970206-8e9c-491c-b631-d3e287f6fd23",
@@ -498,7 +506,7 @@
             "Key": "47ed9347-82be-4433-ac6e-e828e8ce032d",
             "Value": {
                 "id": "3441bafd-59ab-4449-a74b-0ed220b7329b",
-                "resourcePath": "scripts\\Scr_DarwinP1\\Scr_DarwinP1.yy",
+                "resourcePath": "scripts\\Scr_DarwinP13\\Scr_DarwinP13.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1226,7 +1234,7 @@
             "Key": "c2348e2c-a155-4926-aac2-347cd1f24b08",
             "Value": {
                 "id": "9e87c9dd-e3b3-498d-acaf-2399dea516d6",
-                "resourcePath": "sprites\\Spr_Prologue\\Spr_Prologue.yy",
+                "resourcePath": "sprites\\Spr_GameSelection\\Spr_GameSelection.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -1628,6 +1636,7 @@
         "01f83bf5-b284-46c3-8ad2-4e57b6289f67",
         "47ed9347-82be-4433-ac6e-e828e8ce032d",
         "5efa3e07-4385-46c1-a9dd-2b1a125f1c12",
+        "31b7ffc8-249e-4900-9a4f-c20f2d7e38f3",
         "97030fc5-023f-4f9f-8dd6-7830d9c63acb",
         "9276f2df-dfe9-4cfe-a431-b6b51f99bd31",
         "5bfcc11e-c6c4-4eff-9e2e-87d4096e906b",

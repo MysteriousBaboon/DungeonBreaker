@@ -1,8 +1,8 @@
 {
-    "id": "31b7ffc8-249e-4900-9a4f-c20f2d7e38f3",
+    "id": "47ed9347-82be-4433-ac6e-e828e8ce032d",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "Scr_DarwinP1",
+    "name": "Scr_DarwinP13",
     "IsCompatibility": false,
     "IsDnD": false
 }

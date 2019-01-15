@@ -1,12 +1,12 @@
 event_inherited()
 // Wake uCharacterSelec_Pand attack
 
-if (distance_to_object(obj_player) <= 150)
+if (distance_to_object(Obj_Player) <= 150)
 	{
 		
 			var ex, ey;
-			ex = instance_nearest(x, y, obj_player).x;
-			ey = instance_nearest(x, y, obj_player).y;
+			ex = instance_nearest(x, y, Obj_Player).x;
+			ey = instance_nearest(x, y, Obj_Player).y;
 	//il se reveille
 	image_speed = 1
 	//image_angle = point_direction(x,y,ex,ey) + 90
@@ -16,7 +16,7 @@ if (distance_to_object(obj_player) <= 150)
 			sprite_index = spr_DragonTurtle_Attack
 			
 		
-			with (instance_create_depth(x, y, 1 , obj_Bubble))
+			with (instance_create_depth(x, y, 1 , Obj_Bubble))
 			  {
 				direction = point_direction(x, y, ex, ey) ;
 				
@@ -27,7 +27,7 @@ if (distance_to_object(obj_player) <= 150)
 	}
 	
 // Quand il a finis de se reveiller on swap
-if (sprite_index == spr_DragonTurtle_WakingUCharacterSelec_P && image_index > image_number - 1) sprite_index =spr_DragonTurtle_Iddle
+if (sprite_index == spr_DragonTurtle_WakingUp && image_index > image_number - 1) sprite_index =spr_DragonTurtle_Iddle
 
 
 if (cd >= 1)

@@ -1,45 +1,57 @@
-// S'assurer que tout ce stoCharacterSelec_Pbien
-if (!global.UpMoveP1 && !global.DownMoveP1 && !global.LeftMoveP1 && !global.RightMoveP1)
-	{
-		image_speed = 0;
-		image_index = 0;
-	}
+var xaxis = (global.RightMoveP1 - global.LeftMoveP1);
+var yaxis = (global.DownMoveP1 - global.UpMoveP1);
 
-// Bouger vers le haut
-if (global.UpMoveP1) 
-	{
-		image_speed = 1;
-		y -= VerticalSpeed
-		sprite_index = spr_Darwin_MovingUp;
-	}
+//get direction
+var dir = point_direction(0, 0, xaxis, yaxis);
 
-//Bouger vers le bas
-if (global.DownMoveP1) 
+//get the length
+if (xaxis == 0 and yaxis = 0 )
+{
+    len = 0 ;
+}else {
+    len = spd; 
+}
+
+//hspd vspd
+hspd = lengthdir_x (len, dir);
+vspd = lengthdir_y (len, dir);
+
+//move 
+if(!place_meeting(x+hspd,y,Obj_Wall))
 	{
-			image_speed = 1;
-			y += VerticalSpeed
-			sprite_index = spr_Darwin_MovingDown;
+		x += hspd;
 	}
-//Bouger vers la gauche
-if(global.LeftMoveP1)
+if(!place_meeting(x,y+vspd,Obj_Wall))
 	{
-			image_speed = 1;
-			x -= HorizontalSpeed
-			sprite_index = spr_Darwin_MovingLeft;
-	}
-//Bouger vers la droite
-if (global.RightMoveP1) 
-	{
-				image_speed = 1;
-				x += HorizontalSpeed
-				sprite_index = spr_Darwin_MovingRight;
+		y += vspd;
 	}	
+
+
+//control the sprite
+image_speed = .2;
+if (len == 0) image_index = 1;
+
+// Vertical sprite
+if (vspd > 0 ) {
+    sprite_index = spr_Darwin_MovingDown;
+    
+}else if (vspd < 0 ) {
+    sprite_index = spr_Darwin_MovingUp ;
+}
+
+//horizontal sprite
+if (hspd > 0) {
+    sprite_index = spr_Darwin_MovingRight;
+}else if (hspd < 0) {
+    sprite_index = spr_Darwin_MovingLeft ;
+}  
+
 if (global.LeftSpellP1)
 	{
 		
 		if (cd == 0 )
 			{
-			ds_list_add(Turret_list, instance_create_layer(x, y,"Character_Item", obj_turret)); // Insert your own values here
+			ds_list_add(Turret_list, instance_create_layer(x, y,"Character_Item", Obj_Turret)); // Insert your own values here
 	
 			if (ds_list_size(Turret_list) == 3)
 				{
@@ -53,5 +65,3 @@ if (global.LeftSpellP1)
 			}
 	}
 	
-
-

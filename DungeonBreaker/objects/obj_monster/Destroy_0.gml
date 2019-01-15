@@ -1,1 +1,1 @@
-obj_interface_FirstLevel.Mob -= 1;
+global.MonsterNumber --;

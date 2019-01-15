@@ -1,5 +1,5 @@
 image_angle = point_direction(x,y ,Obj_Cursor1.x , Obj_Cursor1.y)
-if (RightSpellP1)
+if (global.RightSpellP1)
 	{
 		if(cd == 0)
 		{

@@ -18,8 +18,8 @@ global.LeftMoveC1 = false;
 global.RightMoveC1 = false;
 global.UpMoveC1 = false;
 global.DownMoveC1 = false;
-global.Cursor1HSpeed = 5;
-global.Cursor1VSpeed = 5;
+global.Cursor1Speed = 5;
+
 
 // Joueur 1 Control
 global.LeftControlP1 = ord(chr(81));
@@ -31,10 +31,10 @@ global.RightSpellControlP1 = ord(chr(69));
 global.EntryControlP1 = ord(chr(84));
 
 //Curseur du J1 Control
-global.LeftControlC1 = chr(74);
-global.RightControlC1 = chr(76);
-global.UpControlC1 = chr(73);
-global.DownControlC1 = chr(75);
+global.LeftControlC1 = ord(chr(74));
+global.RightControlC1 = ord(chr(76));
+global.UpControlC1 = ord(chr(73));
+global.DownControlC1 = ord(chr(75));
 
 
 
@@ -86,4 +86,4 @@ global.NumberOfTotalPlayer = 0;
 global.CurrentPlace = "TitleScreen";
 
 
-
+global.MonsterNumber = 0;
