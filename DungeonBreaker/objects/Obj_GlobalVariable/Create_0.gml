@@ -81,8 +81,7 @@ global.Player1_0 = 0;
 global.Player1_1 = 0;
 global.Player2_0 = 0;
 global.Player2_1 = 0;
-global.NumberOfLocalPlayer = 0;
-global.NumberOfTotalPlayer = 0;
+global.MultiplayerType = 0;
 global.CurrentPlace = "TitleScreen";
 
 

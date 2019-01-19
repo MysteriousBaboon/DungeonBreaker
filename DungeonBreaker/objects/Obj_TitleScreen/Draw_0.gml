@@ -48,7 +48,7 @@ if (global.CurrentPlace == "Settings")
 			{
 				draw_sprite(Spr_Settings_P1Control,0,200,50);
 				draw_sprite(Spr_Leave,15,800,1000);
-				if(global.EntryP1)global.CurrentPlace = "TitleScreen";
+				if(global.EntryP1 or global.EntryP2)global.CurrentPlace = "TitleScreen";
 			}
 
 		if(!ControlSet)
@@ -91,19 +91,20 @@ if (global.CurrentPlace == "TitleScreen")
 		draw_sprite(spr_Titlescreen_Selection , 0 ,112,204);
 		
 		// Drawing the pointeur on the right place
-		if (Title_Screen == 0) draw_sprite(spr_pointeur,image_index,144,140);
-		if (Title_Screen == 1) draw_sprite(spr_pointeur,image_index,208,140);
-		if (Title_Screen == 2) draw_sprite(spr_pointeur,image_index,270,140);
-		if (Title_Screen == 3) draw_sprite(spr_pointeur,image_index,335,140);
+		if (Title_Screen == 0) draw_sprite(spr_pointeur,image_index,164,170);
+		if (Title_Screen == 1) draw_sprite(spr_pointeur,image_index,196,170);
+		if (Title_Screen == 2) draw_sprite(spr_pointeur,image_index,228,170);
+		if (Title_Screen == 3) draw_sprite(spr_pointeur,image_index,260,170);
+		if (Title_Screen == 4) draw_sprite(spr_pointeur,image_index,292,170);
 		//Check Where the Pointeur is and where we should go when we press enter
 		if (global.RightMoveP1 or global.RightMoveP2)
 			{
-				if (Title_Screen ==3) Title_Screen = -1;
-				if (Title_Screen < 3) Title_Screen += 1; 
+				if (Title_Screen == 4) Title_Screen = -1;
+				if (Title_Screen < 4) Title_Screen += 1; 
 			}
 		if (global.LeftMoveP1 or global.LeftMoveP2)
 			{
-				if (Title_Screen == 0) Title_Screen = 4;
+				if (Title_Screen == 0) Title_Screen = 5;
 				if (Title_Screen > 0) Title_Screen -= 1; 
 			}
 		if ((global.EntryP1 == true or global.EntryP2) && Title_Screen == 0) 
@@ -112,19 +113,19 @@ if (global.CurrentPlace == "TitleScreen")
 				global.EntryP2 = false;
 				global.CurrentPlace = "TitleScreen_PVE";
 			}
-		if ((global.EntryP1 == true or global.EntryP2) && Title_Screen == 1 ) 
+		if ((global.EntryP1 == true or global.EntryP2) && Title_Screen == 2) 
 			{
 				global.EntryP1 = false;
 				global.EntryP2 = false;
 				global.CurrentPlace = "TitleScreen_PVP";
 			}
-		if ((global.EntryP1 == true or global.EntryP2) && Title_Screen == 2 ) 
+		if ((global.EntryP1 == true or global.EntryP2) && Title_Screen == 3 ) 
 			{
 				global.EntryP1 = false;
 				global.EntryP1 = false;
 				global.CurrentPlace = "Settings";
 			}
-		if ((global.EntryP1 == true or global.EntryP2) && Title_Screen == 3 )
+		if ((global.EntryP1 == true or global.EntryP2) && Title_Screen == 4 )
 			{
 				game_end()
 			}
@@ -133,29 +134,76 @@ if (global.CurrentPlace == "TitleScreen")
 if(global.CurrentPlace == "TitleScreen_PVE")
 	{	
 		Title_Screen = 0;
+		Multiplayer_PVE = 0;
 		//Drawing the Interface for the pve and the pointeur
-		draw_sprite(Spr_GameSelection,image_index,960,700);
-		if (Game_Selection_PVE == 0)draw_sprite(spr_pointeur,image_index,730,507);
-		if (Game_Selection_PVE == 1)draw_sprite(spr_pointeur,image_index,730,662);
-		if (Game_Selection_PVE == 2)draw_sprite(spr_pointeur,image_index,730,823);
+		draw_sprite(Spr_TitleScreen_Create , 0 ,90,204)
+		if (Game_Selection_PVE == 0) draw_sprite(spr_pointeur,image_index,206,170);
+		if (Game_Selection_PVE  == 1) draw_sprite(spr_pointeur,image_index,238,170);
+		if (Game_Selection_PVE  == 2) draw_sprite(spr_pointeur,image_index,270,170);
 
-		if (global.DownMoveP1 or global.DownMoveP2)
+		if (global.RightMoveP1 or global.RightMoveP2)
 			{
 				if (Game_Selection_PVE == 2) Game_Selection_PVE = -1;
 				if (Game_Selection_PVE < 2) Game_Selection_PVE += 1; 
 			}
-		if (global.UpMoveP1 or global.UpMoveP2)
+		if (global.LeftMoveP1 or global.LeftMoveP2)
 			{
 				if (Game_Selection_PVE == 0) Game_Selection_PVE = 3;
 				if (Game_Selection_PVE > 0) Game_Selection_PVE -= 1; 
 			}
-		if (Game_Selection_PVE == 2 && (global.EntryP1 == true or global.EntryP2))global.CurrentPlace = "TitleScreen";
+		if (Game_Selection_PVE == 2 && (global.EntryP1 == true or global.EntryP2))
+			{
+				global.EntryP1 = false;
+				global.EntryP2 = false;
+				global.CurrentPlace = "TitleScreen";
+			}
 		if (Game_Selection_PVE == 0 && (global.EntryP1 == true or global.EntryP2))
 			{
-				global.CurrentPlace = "CharacterSelection_PVE";
+				global.EntryP1 = false;
+				global.EntryP2 = false;
+				global.CurrentPlace = "MultiplayerPVE";
 				
 			}	
 	}
+	
+	
+	
+	
+if(global.CurrentPlace == "MultiplayerPVE")
+	{
+		Game_Selection_PVE = 0;
+		//Drawing the Interface for the pve and the pointeur
+		draw_sprite(Spr_TitleScreen_NumberOfPlayer , 0 ,90,204)
+		if (Multiplayer_PVE == 0) draw_sprite(spr_pointeur,image_index,174,170);
+		if (Multiplayer_PVE == 1) draw_sprite(spr_pointeur,image_index,206,170);
+		if (Multiplayer_PVE == 2) draw_sprite(spr_pointeur,image_index,238,170);
+		if (Multiplayer_PVE == 3) draw_sprite(spr_pointeur,image_index,270,170);
+
+		if (global.RightMoveP1 or global.RightMoveP2)
+			{
+				if (Multiplayer_PVE == 3) Multiplayer_PVE = -1;
+				if (Multiplayer_PVE < 3) Multiplayer_PVE += 1; 
+			}
+		if (global.LeftMoveP1 or global.LeftMoveP2)
+			{
+				if (Multiplayer_PVE == 0) Multiplayer_PVE = 4;
+				if (Multiplayer_PVE > 0) Multiplayer_PVE -= 1; 
+			}
+		if (Multiplayer_PVE == 3 && (global.EntryP1 == true or global.EntryP2))global.CurrentPlace = "TitleScreen_PVE";
+		if (Multiplayer_PVE == 0 && (global.EntryP1 == true or global.EntryP2))
+			{
+				alarm[1] = 3;
+				room_goto(CharacterSelection);
+				NewCurrentPlace = true;
+				global.CurrentPlace = "CharacterSelection_PVE"
+				global.MultiplayerType = "Solo";
+				
+			}		
+	}
+
+
+
+
 ////////////////////////////////////////////////////////////	Script PVP
 if(global.CurrentPlace == "TitleScreen_PVP")
 	{	
@@ -179,10 +227,10 @@ if(global.CurrentPlace == "TitleScreen_PVP")
 		if (Game_Selection_PVP == 2 && (global.EntryP1 == true or global.EntryP2))global.CurrentPlace = "TitleScreen";
 		if (Game_Selection_PVP == 0 && (global.EntryP1 == true or global.EntryP2))
 			{
-				alarm[1] = 3;
+				
 				room_goto(CharacterSelection)
 				global.CurrentPlace = "CharacterSelection_PVP";
-				NewCurrentPlace = true;
+		
 			}	
 	}
 
@@ -222,6 +270,7 @@ if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
 		if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
 		if(CharacterSelec_I2 == 0 && CharacterSelec_P2 == 0 && global.EntryP2)
 			{
+					
 					global.Player2_0 = Obj_Darwin;
 			}
 		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 0 && global.EntryP2) 
@@ -238,6 +287,7 @@ if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
 			}
 		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 1 && global.EntryP2) 
 			{
+					
 					global.Player2_0 = Obj_Ashlae;
 			}	
 	}
@@ -262,6 +312,7 @@ if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(FirstLevel_Forest);
 
 if(global.CurrentPlace == "CharacterSelection_PVP" && NewCurrentPlace == false)
 	{	
+		
 		if(CharacterSelec_P1 == 2 && global.EntryP1)room_goto(TitleScreen);
 		if(CharacterSelec_P2 == 2 && global.EntryP2)room_goto(TitleScreen);
 		if(CharacterSelec_I1 == 0 && CharacterSelec_P1 == 0 && global.EntryP1)
@@ -284,15 +335,10 @@ if(global.CurrentPlace == "CharacterSelection_PVP" && NewCurrentPlace == false)
 			{
 					global.Player1_0 = Obj_Ashlae;
 			}	
-
-	}
-// P2
-if(global.CurrentPlace == "CharacterSelection_PVP" && NewCurrentPlace == false)
-	{	
-		if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
-		if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
+//P2
 		if(CharacterSelec_I2 == 0 && CharacterSelec_P2 == 0 && global.EntryP2)
 			{
+				
 					global.Player2_0 = Obj_Darwin;
 			}
 		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 0 && global.EntryP2) 
@@ -309,10 +355,12 @@ if(global.CurrentPlace == "CharacterSelection_PVP" && NewCurrentPlace == false)
 			}
 		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 1 && global.EntryP2) 
 			{
+						game_end();
 					global.Player2_0 = Obj_Ashlae;
 			}	
+
 	}
-if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(Room_Pvp_1);		
+				if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(Room_Pvp_1);	
 	
 	
 

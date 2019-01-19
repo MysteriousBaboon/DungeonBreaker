@@ -1,2 +1,2 @@
-obj_player.Health -=1;
+Obj_Player.Health -=1;
 instance_destroy(id)

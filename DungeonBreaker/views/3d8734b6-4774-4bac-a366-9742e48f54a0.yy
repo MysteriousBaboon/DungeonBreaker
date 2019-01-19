@@ -8,7 +8,7 @@
         "af9326ce-d213-43c9-96d7-9874e7b1f561"
     ],
     "filterType": "GMSprite",
-    "folderName": "Barbarian",
+    "folderName": "Renaud",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

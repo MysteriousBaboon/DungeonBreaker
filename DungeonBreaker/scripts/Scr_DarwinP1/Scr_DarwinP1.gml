@@ -17,11 +17,11 @@ hspd = lengthdir_x (len, dir);
 vspd = lengthdir_y (len, dir);
 
 //move 
-if(!place_meeting(x+hspd,y,Obj_Wall))
+if(!place_meeting(x+hspd,y ,Obj_Wall ))
 	{
 		x += hspd;
 	}
-if(!place_meeting(x,y+vspd,Obj_Wall))
+if(!place_meeting(x,y+vspd,Obj_Wall ))
 	{
 		y += vspd;
 	}	

@@ -1,4 +1,4 @@
-if(room != FirstLevel_Forest)
+if(room == TitleScreen or CharacterSelection)
 	{
 		if(keyboard_check_pressed(global.LeftControlP1))global.LeftMoveP1 = true;
 		else global.LeftMoveP1 = false;

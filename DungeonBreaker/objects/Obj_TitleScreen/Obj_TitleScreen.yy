@@ -204,7 +204,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "2",
+            "value": "0",
             "varName": "CharacterSelec_I1",
             "varType": 0
         },
@@ -235,6 +235,20 @@
             "value": "0",
             "varName": "NewCurrentPlace",
             "varType": 3
+        },
+        {
+            "id": "e2774b3a-ade1-4d88-bbcd-0fb993fdc843",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "Multiplayer_PVE",
+            "varType": 0
         }
     ],
     "solid": false,

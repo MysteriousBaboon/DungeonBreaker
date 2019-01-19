@@ -1,2 +1,5 @@
-instance_create_layer(x,y,"Character",global.Player2_0)
-instance_create_layer(x,y,"Character",Obj_Cursor1)
+if(global.MultiplayerType != "Solo")
+	{
+		instance_create_layer(x,y,"Character",global.Player2_0)
+
+	}
