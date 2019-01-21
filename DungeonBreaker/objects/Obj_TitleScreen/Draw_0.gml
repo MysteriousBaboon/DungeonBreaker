@@ -161,7 +161,7 @@ if(global.CurrentPlace == "TitleScreen_PVE")
 			{
 				global.EntryP1 = false;
 				global.EntryP2 = false;
-				global.CurrentPlace = "MultiplayerPVE";
+				global.CurrentPlace = "NewPVE";
 				
 			}	
 	}
@@ -169,7 +169,7 @@ if(global.CurrentPlace == "TitleScreen_PVE")
 	
 	
 	
-if(global.CurrentPlace == "MultiplayerPVE")
+if(global.CurrentPlace == "NewPVE")
 	{
 		Game_Selection_PVE = 0;
 		//Drawing the Interface for the pve and the pointeur
@@ -189,16 +189,28 @@ if(global.CurrentPlace == "MultiplayerPVE")
 				if (Multiplayer_PVE == 0) Multiplayer_PVE = 4;
 				if (Multiplayer_PVE > 0) Multiplayer_PVE -= 1; 
 			}
-		if (Multiplayer_PVE == 3 && (global.EntryP1 == true or global.EntryP2))global.CurrentPlace = "TitleScreen_PVE";
+			
 		if (Multiplayer_PVE == 0 && (global.EntryP1 == true or global.EntryP2))
 			{
 				alarm[1] = 3;
 				room_goto(CharacterSelection);
 				NewCurrentPlace = true;
 				global.CurrentPlace = "CharacterSelection_PVE"
-				global.MultiplayerType = "Solo";
+				global.MultiplayerType = 1;
 				
 			}		
+		if (Multiplayer_PVE == 1 && (global.EntryP1 == true or global.EntryP2))
+			{
+				alarm[1] = 3;
+				room_goto(CharacterSelection);
+				NewCurrentPlace = true;
+				global.CurrentPlace = "CharacterSelection_PVE"
+				global.MultiplayerType = 2;
+				
+			}			
+			
+		if (Multiplayer_PVE == 3 && (global.EntryP1 == true or global.EntryP2))global.CurrentPlace = "TitleScreen_PVE";
+		
 	}
 
 
@@ -229,6 +241,7 @@ if(global.CurrentPlace == "TitleScreen_PVP")
 			{
 				
 				room_goto(CharacterSelection)
+				global.MultiplayerType = 2;
 				global.CurrentPlace = "CharacterSelection_PVP";
 		
 			}	
@@ -261,37 +274,43 @@ if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
 			{
 					global.Player1_0 = Obj_Ashlae;
 			}	
+		if(global.MultiplayerType == 1 && global.Player1_0 != 0)room_goto(FirstLevel_Forest)
+	}
 
-	}
+	
 // P2
-if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
-	{	
-		if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
-		if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
-		if(CharacterSelec_I2 == 0 && CharacterSelec_P2 == 0 && global.EntryP2)
-			{
+if(global.MultiplayerType == 2)
+	{
+		if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
+			{	
+				if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
+				if(CharacterSelec_P2 == 2 && global.EntryP1)room_goto(TitleScreen);
+				if(CharacterSelec_I2 == 0 && CharacterSelec_P2 == 0 && global.EntryP2)
+					{
 					
-					global.Player2_0 = Obj_Darwin;
-			}
-		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 0 && global.EntryP2) 
-			{
-					global.Player2_0 = Obj_Ivanhoe;	
-			}	
-		if (CharacterSelec_I2 == 2 && CharacterSelec_P2 == 0 && global.EntryP2) 
-			{
-					global.Player2_0 = Obj_Renaud;
-			}
-		if (CharacterSelec_I2 == 0 && CharacterSelec_P2 == 1 && global.EntryP2) 
-			{
-					global.Player2_0 = Obj_Saria;
-			}
-		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 1 && global.EntryP2) 
-			{
+						global.Player2_0 = Obj_Darwin;
+					}
+				if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 0 && global.EntryP2) 
+					{
+						global.Player2_0 = Obj_Ivanhoe;	
+					}	
+				if (CharacterSelec_I2 == 2 && CharacterSelec_P2 == 0 && global.EntryP2) 
+					{
+						global.Player2_0 = Obj_Renaud;
+					}
+				if (CharacterSelec_I2 == 0 && CharacterSelec_P2 == 1 && global.EntryP2) 
+					{
+						global.Player2_0 = Obj_Saria;
+					}
+				if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 1 && global.EntryP2) 
+					{
 					
-					global.Player2_0 = Obj_Ashlae;
-			}	
+						global.Player2_0 = Obj_Ashlae;
+					}	
+		if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(FirstLevel_Forest);				
+		}
 	}
-if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(FirstLevel_Forest);		
+
 	
 	
 
@@ -355,12 +374,12 @@ if(global.CurrentPlace == "CharacterSelection_PVP" && NewCurrentPlace == false)
 			}
 		if (CharacterSelec_I2 == 1 && CharacterSelec_P2 == 1 && global.EntryP2) 
 			{
-						game_end();
+					
 					global.Player2_0 = Obj_Ashlae;
 			}	
-
+		if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(Room_Pvp_1);	
 	}
-				if(global.Player2_0 != 0 && global.Player1_0 != 0)room_goto(Room_Pvp_1);	
+				
 	
 	
 

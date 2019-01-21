@@ -22,7 +22,7 @@ if(room == TitleScreen or CharacterSelection)
 		if(keyboard_check_pressed(global.EntryControlP2))global.EntryP2 = true
 		else global.EntryP2 = false;
 	}
-else
+if(room != TitleScreen && room != CharacterSelection)
 	{
 		if(keyboard_check(global.LeftControlP1))global.LeftMoveP1 = true;
 		else global.LeftMoveP1 = false;
@@ -58,6 +58,18 @@ else
 		else global.UpMoveP2 = false;
 		if(keyboard_check(global.EntryControlP2))global.EntryP2 = true
 		else global.EntryP2 = false;
+		if(keyboard_check_pressed(global.LeftSpellControlP2))global.LeftSpellP2 = true
+		else global.LeftSpellP2 = false;
+		if(keyboard_check_pressed(global.RightSpellControlP2))global.RightSpellP2 = true
+		else global.RightSpellP2 = false;
+		if(keyboard_check(global.LeftControlC2)) global.LeftMoveC2 = true;
+		else global.LeftMoveC2 = false;	
+		if(keyboard_check(global.RightControlC2)) global.RightMoveC2 = true;
+		else global.RightMoveC2 = false;		
+		if(keyboard_check(global.UpControlC2)) global.UpMoveC2 = true;
+		else global.UpMoveC2 = false;	
+		if(keyboard_check(global.DownControlC2)) global.DownMoveC2 = true;
+		else global.DownMoveC2 = false;	
 	}
 		
 		

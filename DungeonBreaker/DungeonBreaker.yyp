@@ -727,14 +727,6 @@
             }
         },
         {
-            "Key": "665326e7-7c10-4350-acec-963a6cfb4703",
-            "Value": {
-                "id": "9cca62d6-8b71-4f2c-a4ab-6adf46c150e1",
-                "resourcePath": "rooms\\Prologue_Solo_Character_Selection\\Prologue_Solo_Character_Selection.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "68d8c747-6497-4d4f-9ed9-c30401b78445",
             "Value": {
                 "id": "ee2e2515-21d3-48dd-9717-254c698b207f",
@@ -1047,14 +1039,6 @@
             }
         },
         {
-            "Key": "a3155eb4-d83b-461a-ab16-4b1d9c8a26eb",
-            "Value": {
-                "id": "40d3f441-2030-4bc5-a035-85341a0ac78d",
-                "resourcePath": "rooms\\Prologue_Online_Character_Selection\\Prologue_Online_Character_Selection.yy",
-                "resourceType": "GMRoom"
-            }
-        },
-        {
             "Key": "a5b753ab-4439-4e0d-bc99-b5d2a9fa0e08",
             "Value": {
                 "id": "c98fc5bb-3782-4f4b-b2af-a0d958e51e92",
@@ -1300,14 +1284,6 @@
                 "id": "4a193b79-a1e0-4805-a367-6e69605ffcb8",
                 "resourcePath": "objects\\Obj_Player2\\Obj_Player2.yy",
                 "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "cc4b5344-f044-4861-b7f6-b7a5a4a74641",
-            "Value": {
-                "id": "3b8d4bab-9e6e-4d7d-a4c1-11772b685987",
-                "resourcePath": "rooms\\Prologue_Local_Character_Selection\\Prologue_Local_Character_Selection.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
@@ -1588,6 +1564,14 @@
                 "id": "f52388f5-ab9a-46c9-af03-22b1870a9fc0",
                 "resourcePath": "views\\f6e2b34d-751f-49ae-a629-ba877c32f1d1.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f77cb8ce-0d6a-4fe2-9511-15338772f8d2",
+            "Value": {
+                "id": "a9742382-3482-427c-aec8-eb04e595b331",
+                "resourcePath": "sprites\\Spr_Cursor2\\Spr_Cursor2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

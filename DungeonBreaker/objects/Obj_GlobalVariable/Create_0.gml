@@ -59,23 +59,23 @@ global.LeftMoveC2 = false;
 global.RightMoveC2 = false;
 global.UpMoveC2 = false;
 global.DownMoveC2 = false;
-global.Cursor1HSpeed = 5;
-global.Cursor1VSpeed = 5;
+global.Cursor2Speed = 5;
+
 
 // Joueur 2 Control
 global.LeftControlP2 = vk_left;
 global.RightControlP2  = vk_right;
 global.UpControlP2 = vk_up;
 global.DownControlP2 = vk_down;
-global.LeftSpellControlP2 = chr(65);
-global.RightSpellControlP2 = chr(69);
+global.LeftSpellControlP2 = ord(chr(65));
+global.RightSpellControlP2 = ord(chr(69));
 global.EntryControlP2 = vk_enter;
 
 //Curseur du J2 Control
-global.LeftControlC2 = chr(74);
-global.RightControl2 = chr(76);
-global.UpControlC2 = chr(73);
-global.DownControlC2 = chr(75);
+global.LeftControlC2 = ord(chr(74));
+global.RightControlC2 = ord(chr(76));
+global.UpControlC2 = ord(chr(73));
+global.DownControlC2 = ord(chr(75));
 
 global.Player1_0 = 0;
 global.Player1_1 = 0;

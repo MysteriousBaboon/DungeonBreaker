@@ -7,7 +7,7 @@
         "dd6f2ad1-2765-45ec-a865-990e6bd124fc"
     ],
     "filterType": "GMSprite",
-    "folderName": "Forest",
+    "folderName": "FirstLevel",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

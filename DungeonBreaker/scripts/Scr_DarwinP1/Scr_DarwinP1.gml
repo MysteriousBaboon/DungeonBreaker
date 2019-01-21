@@ -28,7 +28,7 @@ if(!place_meeting(x,y+vspd,Obj_Wall ))
 
 
 //control the sprite
-image_speed = .2;
+
 if (len == 0) image_index = 1;
 
 // Vertical sprite
