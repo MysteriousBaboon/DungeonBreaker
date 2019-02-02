@@ -28,27 +28,23 @@ if(!place_meeting(x,y+vspd,Obj_Wall ))
 
 
 //control the sprite
-image_speed = .2;
+
 if (len == 0) image_index = 1;
 
 // Vertical sprite
-if (vspd > 0 ) {
-    sprite_index = Spr_Ashlae_MovingDown;
+if (vspd > 0 && hspd == 0) {
+    sprite_index = Spr_Ashlae_MovingD;
     
-}else if (vspd < 0 ) {
-    sprite_index = Spr_Ashlae_MovingUp ;
+}else if (vspd < 0 && hspd == 0) {
+    sprite_index = Spr_Ashlae_MovingU ;
 }
 
 //horizontal sprite
-if (hspd > 0) {
-    sprite_index = Spr_Ashlae_MovingRight;
-}else if (hspd < 0) {
-    sprite_index = Spr_Ashlae_MovingLeft ;
+if (hspd > 0 && vspd == 0) {
+    sprite_index = Spr_Ashlae_MovingR;
+}else if (hspd < 0 && vspd == 0) {
+    sprite_index = Spr_Ashlae_MovingL ;
 }  
 
-if (global.LeftSpellP1)
-	{
-		
-		
-	}
+
 	
