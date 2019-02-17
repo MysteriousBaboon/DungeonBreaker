@@ -7,7 +7,9 @@
         "bba96d8a-cfc5-4f17-8f59-5f1483489000",
         "efe495d3-d22c-4e3f-9a2e-b236d8483178",
         "ffaf4390-63e1-4bf7-9133-a9130f417b5b",
-        "f9727446-6157-4981-b35f-5461238eb85d"
+        "f9727446-6157-4981-b35f-5461238eb85d",
+        "60229ff9-ff8d-4bf9-ad21-94e683a817bf",
+        "3d912f04-cca5-43f4-852f-fb5ab0a7e9a5"
     ],
     "filterType": "GMSprite",
     "folderName": "Character Selec",

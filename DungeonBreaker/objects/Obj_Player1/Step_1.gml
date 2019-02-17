@@ -1,0 +1,1 @@
+if(global.HealthPlayer1 <= 0) game_end()

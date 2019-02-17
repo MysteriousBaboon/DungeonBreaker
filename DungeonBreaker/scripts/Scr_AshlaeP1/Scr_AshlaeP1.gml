@@ -32,12 +32,34 @@ if(!place_meeting(x,y+vspd,Obj_Wall ))
 if (len == 0) image_index = 1;
 
 // Vertical sprite
-if (vspd > 0 && hspd == 0) {
+if (vspd > 0 && hspd == 0) 
+	{
     sprite_index = Spr_Ashlae_MovingD;
-    
-}else if (vspd < 0 && hspd == 0) {
+	}
+	
+if (vspd > 0 && hspd > 0) 
+	{
+    sprite_index = Spr_Ashlae_MovingRD;
+	}
+if (vspd > 0 && hspd < 0) 
+	{
+    sprite_index = Spr_Ashlae_MovingDL;
+	}
+			
+else if (vspd < 0 && hspd == 0) 
+	{
     sprite_index = Spr_Ashlae_MovingU ;
-}
+	}
+if (vspd < 0 && hspd > 0) 
+	{
+    sprite_index = Spr_Ashlae_MovingUR;
+	}
+if (vspd < 0 && hspd < 0) 
+	{
+    sprite_index = Spr_Ashlae_MovingLU;
+	}
+		
+
 
 //horizontal sprite
 if (hspd > 0 && vspd == 0) {

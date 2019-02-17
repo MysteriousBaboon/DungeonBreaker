@@ -88,14 +88,34 @@ if (global.CurrentPlace == "TitleScreen")
 		Settings1I = 0;
 		Settings1P = 0;
 		//Drawing the interface
-		draw_sprite(spr_Titlescreen_Selection , 0 ,112,204);
+		
 		
 		// Drawing the pointeur on the right place
-		if (Title_Screen == 0) draw_sprite(spr_pointeur,image_index,164,170);
-		if (Title_Screen == 1) draw_sprite(spr_pointeur,image_index,196,170);
-		if (Title_Screen == 2) draw_sprite(spr_pointeur,image_index,228,170);
-		if (Title_Screen == 3) draw_sprite(spr_pointeur,image_index,260,170);
-		if (Title_Screen == 4) draw_sprite(spr_pointeur,image_index,292,170);
+		if (Title_Screen == 0) 
+			{
+				draw_sprite(spr_pointeur,image_index,164,170);
+				draw_sprite(spr_Titlescreen_Selection , 0 ,112,204);
+			}
+		if (Title_Screen == 1) 
+			{
+				draw_sprite(spr_pointeur,image_index,196,170);
+				draw_sprite(spr_Titlescreen_Selection , 1 ,112,204);
+			}
+		if (Title_Screen == 2) 
+			{
+				draw_sprite(spr_pointeur,image_index,228,170);
+				draw_sprite(spr_Titlescreen_Selection , 2 ,112,204);
+			}
+		if (Title_Screen == 3) 
+			{
+				draw_sprite(spr_pointeur,image_index,260,170);
+				draw_sprite(spr_Titlescreen_Selection , 3 ,112,204);
+			}
+		if (Title_Screen == 4) 
+			{
+				draw_sprite(spr_pointeur,image_index,292,170);
+				draw_sprite(spr_Titlescreen_Selection , 4 ,112,204);
+			}
 		//Check Where the Pointeur is and where we should go when we press enter
 		if (global.RightMoveP1 or global.RightMoveP2)
 			{
@@ -136,10 +156,21 @@ if(global.CurrentPlace == "TitleScreen_PVE")
 		Title_Screen = 0;
 		Multiplayer_PVE = 0;
 		//Drawing the Interface for the pve and the pointeur
-		draw_sprite(Spr_TitleScreen_Create , 0 ,90,204)
-		if (Game_Selection_PVE == 0) draw_sprite(spr_pointeur,image_index,206,170);
-		if (Game_Selection_PVE  == 1) draw_sprite(spr_pointeur,image_index,238,170);
-		if (Game_Selection_PVE  == 2) draw_sprite(spr_pointeur,image_index,270,170);
+		if (Game_Selection_PVE == 0) 
+			{
+				draw_sprite(Spr_TitleScreen_Create , 0 ,90,204)
+				draw_sprite(spr_pointeur,image_index,206,170);
+			}
+		if (Game_Selection_PVE  == 1)
+			{
+				draw_sprite(Spr_TitleScreen_Create , 1 ,90,204)
+				draw_sprite(spr_pointeur,image_index,238,170);
+			}
+		if (Game_Selection_PVE  == 2) 
+			{
+				draw_sprite(Spr_TitleScreen_Create , 2 ,90,204)
+				draw_sprite(spr_pointeur,image_index,270,170);
+			}
 
 		if (global.RightMoveP1 or global.RightMoveP2)
 			{
@@ -173,12 +204,27 @@ if(global.CurrentPlace == "NewPVE")
 	{
 		Game_Selection_PVE = 0;
 		//Drawing the Interface for the pve and the pointeur
-		draw_sprite(Spr_TitleScreen_NumberOfPlayer , 0 ,90,204)
-		if (Multiplayer_PVE == 0) draw_sprite(spr_pointeur,image_index,174,170);
-		if (Multiplayer_PVE == 1) draw_sprite(spr_pointeur,image_index,206,170);
-		if (Multiplayer_PVE == 2) draw_sprite(spr_pointeur,image_index,238,170);
-		if (Multiplayer_PVE == 3) draw_sprite(spr_pointeur,image_index,270,170);
 
+		if (Multiplayer_PVE == 0)
+			{
+				draw_sprite(spr_pointeur,image_index,174,170);
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 0 ,90,204)
+			}
+		if (Multiplayer_PVE == 1)
+			{
+				draw_sprite(spr_pointeur,image_index,206,170);
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 1 ,90,204)
+			}
+		if (Multiplayer_PVE == 2)
+			{
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 2 ,90,204)
+				draw_sprite(spr_pointeur,image_index,238,170);
+			}
+		if (Multiplayer_PVE == 3)
+			{
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 3 ,90,204)
+				draw_sprite(spr_pointeur,image_index,270,170);
+			}
 		if (global.RightMoveP1 or global.RightMoveP2)
 			{
 				if (Multiplayer_PVE == 3) Multiplayer_PVE = -1;
@@ -254,27 +300,54 @@ if(global.CurrentPlace == "CharacterSelection_PVE" && NewCurrentPlace == false)
 	{	
 		if(CharacterSelec_P1 == 2 && global.EntryP1)room_goto(TitleScreen);
 		if(CharacterSelec_P2 == 2 && global.EntryP2)room_goto(TitleScreen);
-		if(CharacterSelec_I1 == 0 && CharacterSelec_P1 == 0 && global.EntryP1)
+		if(CharacterSelec_I1 == 0 && CharacterSelec_P1 == 0 && global.EntryP1 && global.Player1_0 == 0)
 			{
 					global.Player1_0 = Obj_Darwin;
 			}
-		if (CharacterSelec_I1 == 1 && CharacterSelec_P1 == 0 && global.EntryP1) 
+		if (CharacterSelec_I1 == 1 && CharacterSelec_P1 == 0 && global.EntryP1 && global.Player1_0 == 0) 
 			{
 					global.Player1_0 = Obj_Ivanhoe;	
 			}	
-		if (CharacterSelec_I1 == 2 && CharacterSelec_P1 == 0 && global.EntryP1) 
+		if (CharacterSelec_I1 == 2 && CharacterSelec_P1 == 0 && global.EntryP1 && global.Player1_0 == 0) 
 			{
 					global.Player1_0 = Obj_Renaud;
 			}
-		if (CharacterSelec_I1 == 0 && CharacterSelec_P1 == 1 && global.EntryP1) 
+		if (CharacterSelec_I1 == 0 && CharacterSelec_P1 == 1 && global.EntryP1 && global.Player1_0 == 0) 
 			{
 					global.Player1_0 = Obj_Saria;
 			}
-		if (CharacterSelec_I1 == 1 && CharacterSelec_P1 == 1 && global.EntryP1) 
+		if (CharacterSelec_I1 == 1 && CharacterSelec_P1 == 1 && global.EntryP1 && global.Player1_0 == 0) 
 			{
 					global.Player1_0 = Obj_Ashlae;
 			}	
-		if(global.MultiplayerType == 1 && global.Player1_0 != 0)room_goto(FirstLevel_Forest)
+		if(global.Player1_0 != 0)
+			{
+			
+				if(CharacterSelec_I1 == 0 && CharacterSelec_P1 == 0 && global.EntryP1 && global.Player1_0 != Obj_Darwin)
+					{
+						global.Player1_1 = Obj_Darwin;
+					}
+				if (CharacterSelec_I1 == 1 && CharacterSelec_P1 == 0 && global.EntryP1 && global.Player1_0 != Obj_Ivanhoe) 
+					{
+						global.Player1_1 = Obj_Ivanhoe;	
+					}	
+				if (CharacterSelec_I1 == 2 && CharacterSelec_P1 == 0 && global.EntryP1 && global.Player1_0 != Obj_Renaud) 
+					{
+						global.Player1_1 = Obj_Renaud;
+					}
+				if (CharacterSelec_I1 == 0 && CharacterSelec_P1 == 1 && global.EntryP1 && global.Player1_0 != Obj_Saria) 
+					{
+						global.Player1_1 = Obj_Saria;
+					}
+				if (CharacterSelec_I1 == 1 && CharacterSelec_P1 == 1 && global.EntryP1 && global.Player1_0 != Obj_Ashlae) 
+					{
+						global.Player1_1 = Obj_Ashlae;
+					}		
+			}
+			
+			
+			
+		if(global.MultiplayerType == 1 && global.Player1_0 != 0 && global.Player1_1 != 0)room_goto(FirstLevel_Forest)
 	}
 
 	

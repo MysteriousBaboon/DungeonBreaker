@@ -1,2 +1,2 @@
-Obj_Player.Health -=1;
+global.HealthPlayer1 -=4;
 instance_destroy(id)

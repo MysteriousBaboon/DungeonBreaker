@@ -1,0 +1,1 @@
+if(global.SwapP1)camera_set_view_target(view_camera[0],global.Player1_0)

@@ -46,6 +46,8 @@ if(room != TitleScreen && room != CharacterSelection)
 		else global.UpMoveC1 = false;	
 		if(keyboard_check(global.DownControlC1)) global.DownMoveC1 = true;
 		else global.DownMoveC1 = false;	
+		if(keyboard_check_pressed(global.SwapControlP1))global.SwapP1 = true;
+		else global.SwapP1 = false;
 	
 
 		if(keyboard_check(global.LeftControlP2))global.LeftMoveP2 = true;

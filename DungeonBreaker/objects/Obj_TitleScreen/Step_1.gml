@@ -1,26 +1,26 @@
 // Joueur 1
-if (global.LeftMoveP1 && global.Player1_0 == 0)
+if (global.LeftMoveP1)
 	{
 		
 		if (CharacterSelec_I1 > -1) CharacterSelec_I1--
 		if (CharacterSelec_I1 == -1) CharacterSelec_I1 = 2
 	}
 	
-if (global.UpMoveP1 && global.Player1_0 == 0)
+if (global.UpMoveP1)
 	{
 		if (CharacterSelec_P1> -1) CharacterSelec_P1--
 		if (CharacterSelec_P1== -1) CharacterSelec_P1= 2
 
 	}
 	
-if (global.RightMoveP1 && global.Player1_0 == 0)
+if (global.RightMoveP1 )
 	{
 		if (CharacterSelec_I1 < 3) CharacterSelec_I1++
 		if (CharacterSelec_I1 == 3) CharacterSelec_I1 = 0
 
 	}
 	
-if (global.DownMoveP1 && global.Player1_0 == 0)
+if (global.DownMoveP1 )
 	{
 		if (CharacterSelec_P1< 3) CharacterSelec_P1++
 		if (CharacterSelec_P1== 3) CharacterSelec_P1= 0

@@ -1,6 +1,6 @@
 
-var _w = 960;
-var _h = 540;
+var _w = 384;
+var _h = 216;
 
 // Set uCharacterSelec_Pcamera for view[0] (player 1)
 view_enabled = true;

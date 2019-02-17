@@ -12,6 +12,7 @@ global.GameplayTypeP1 = "Keyboard";
 global.EntryP1 = false;
 global.UnzoomP1 = false;
 global.SwapP1 = false;
+global.HealthPlayer1 = 0;
 
 //Curseur du J1
 global.LeftMoveC1 = false;
@@ -29,6 +30,8 @@ global.DownControlP1 = ord(chr(83));
 global.LeftSpellControlP1 = ord(chr(65));
 global.RightSpellControlP1 = ord(chr(69));
 global.EntryControlP1 = ord(chr(84));
+global.SwapControlP1 = ord(chr(09));
+
 
 //Curseur du J1 Control
 global.LeftControlC1 = ord(chr(74));

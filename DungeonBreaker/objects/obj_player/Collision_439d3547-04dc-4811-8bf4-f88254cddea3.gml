@@ -1,5 +1,5 @@
 if (invulnerability == 0)
 	{
-	Health -= 1;
+	Invicible = true;	
 	invulnerability = 40;
 	}
