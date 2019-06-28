@@ -1,0 +1,1 @@
+image_angle = Obj_Renaud.image_angle;

@@ -4,8 +4,9 @@
     "mvc": "1.1",
     "name": "7ec226ec-7f2c-4319-8900-195b6e6dd85c",
     "children": [
-        "1bcce3c6-8287-4727-8da9-1fe687dc166b",
-        "23451fa8-345f-4bad-bfd6-b1aee4df8777"
+        "45ffe77d-2e66-47f8-92f7-8482bd8e9e35",
+        "4a06f161-473a-4087-ac82-4be924f64aed",
+        "c3150d60-d822-47d1-91c0-bb7b32a3c3da"
     ],
     "filterType": "GMScript",
     "folderName": "Interface",

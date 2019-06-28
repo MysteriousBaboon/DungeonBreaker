@@ -12,3 +12,12 @@ if (cd >= 1)
 {
 	cd--;
 }
+
+if (global.MainSpellP1 && Obj_Darwin.MainSpellCd == false)
+	{	
+		instance_create_layer(x,y,"Projectile",Obj_Darwin_MainSpell)
+		instance_create_layer(x,y,"Projectile",Obj_Darwin_MainSpell)
+		instance_create_layer(x,y,"Projectile",Obj_Darwin_MainSpell)
+		instance_create_layer(x,y,"Projectile",Obj_Darwin_MainSpell)
+		instance_create_layer(x,y,"Projectile",Obj_Darwin_MainSpell)
+	}

@@ -249,6 +249,34 @@
             "value": "0",
             "varName": "Multiplayer_PVE",
             "varType": 0
+        },
+        {
+            "id": "b2788016-6a51-431b-8b1a-d6912281473f",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "SettingsI1",
+            "varType": 0
+        },
+        {
+            "id": "42de3141-19b5-4949-8279-d7c513cd3658",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "SettingsP1",
+            "varType": 0
         }
     ],
     "solid": false,

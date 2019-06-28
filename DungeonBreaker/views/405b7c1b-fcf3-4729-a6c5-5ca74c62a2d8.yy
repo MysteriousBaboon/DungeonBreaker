@@ -4,9 +4,9 @@
     "mvc": "1.1",
     "name": "405b7c1b-fcf3-4729-a6c5-5ca74c62a2d8",
     "children": [
-        "b2574e3e-33c3-4450-9eb0-0202a130a058",
         "3e3b2656-68ce-4990-bc45-f618d53c776e",
-        "e04e3c0f-4355-46ab-aaf6-7a2dc0ea4baf"
+        "4f9c42d2-e352-44bd-bb82-05c2ac2f3e02",
+        "d98ee9f4-e300-4f58-a5cc-50c2d0d817bb"
     ],
     "filterType": "GMSprite",
     "folderName": "Ivanhoe",

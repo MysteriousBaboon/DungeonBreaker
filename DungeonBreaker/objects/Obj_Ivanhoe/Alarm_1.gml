@@ -1,0 +1,1 @@
+RightSpellCd = false;

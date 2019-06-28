@@ -1,12 +1,12 @@
 /// Initialize Variable
 event_inherited()
-MovingUCharacterSelec_P= 0;
-MovingDown = 0;
-MovingLeft = 0;
-MovingRight = 0;
-
+LeftSpellCd = false;
+RightSpellCd = false;
+DodgeSpellCd = false;
+MainSpellCd = false;
 HorizontalSpeed = 3;
 VerticalSpeed = 2;
+State =  Scr_IvanhoeP1_Movement;
 
-if (Obj_Player1.Player1_0 == Obj_Darwin) Player = 1
-if (Obj_Player2.Player2_0 == Obj_Darwin) Player = 2
+if (global.Player1_0 == Obj_Ivanhoe or global.Player1_1 == Obj_Ivanhoe) Player = 1
+if (global.Player2_0 == Obj_Ivanhoe or global.Player2_1 == Obj_Ivanhoe) Player = 2

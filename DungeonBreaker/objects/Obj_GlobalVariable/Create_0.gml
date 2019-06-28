@@ -8,7 +8,9 @@ global.DownMoveP1 = false;
 ///Gameplay
 global.LeftSpellP1 = false;
 global.RightSpellP1 = false;
-global.GameplayTypeP1 = "Keyboard";
+global.DodgeSpellP1 = false;
+global.MainSpellP1 = false;
+global.GameplayTypeP1 = "Mouse";
 global.EntryP1 = false;
 global.UnzoomP1 = false;
 global.SwapP1 = false;
@@ -27,8 +29,12 @@ global.LeftControlP1 = ord(chr(81));
 global.RightControlP1  = ord(chr(68));
 global.UpControlP1 = ord(chr(90));
 global.DownControlP1 = ord(chr(83));
-global.LeftSpellControlP1 = ord(chr(65));
-global.RightSpellControlP1 = ord(chr(69));
+
+global.LeftSpellControlP1 = ord(chr(85));
+global.RightSpellControlP1 = ord(chr(79));
+global.DodgeSpellControlP1 = ord(chr(69));
+global.MainSpellControlP1 = ord(chr(65));
+
 global.EntryControlP1 = ord(chr(84));
 global.SwapControlP1 = ord(chr(09));
 

@@ -1,83 +1,199 @@
 //////////////////////////////////////Settings
-if (global.CurrentPlace == "Settings") 
+if (global.CurrentPlace == "Settings")
 	{
-		Title_Screen = 0;
-		draw_set_font(font1)
-		draw_text(100,180,global.LeftControlP1)
-		draw_text(100,290,global.RightControlP1)
-		draw_text(100,400,global.UpControlP1)
-		draw_text(100,500,global.DownControlP1)
-		draw_text(100,600,global.LeftSpellControlP1)
-		draw_text(100,700,global.RightSpellControlP1)
-		draw_text(100,800,global.EntryControlP1)
-		draw_text(550,180,global.LeftControlC1)
-		draw_text(550,290,global.RightControlC1)
-		draw_text(550,400,global.UpControlC1)
-		draw_text(550,500,global.DownControlC1)
-
-		if(Settings1I == 0 && Settings1P == 0 )
-			{
-				draw_sprite(Spr_Settings_P1Control,1,200,50);
-				if(keyboard_check_direct(ord(global.EntryControlP1)) && ControlSet == false)
-					{
-						ControlSet = true;
-						alarm[0] = 2*room_speed;
-						keyboard_key = "";
-					}				
-				if(ControlSet && keyboard_key != "") 
-					{
-						LeftControlP1 = chr(keyboard_key);
-						ControlSet = false;
-					}
-			}		
-		if(Settings1I == 0 && Settings1P == 1)draw_sprite(Spr_Settings_P1Control,2,200,50)
-		if(Settings1I == 1 && Settings1P == 0)draw_sprite(Spr_Settings_P1Control,3,200,50)
-		if(Settings1I == 1 && Settings1P == 1)draw_sprite(Spr_Settings_P1Control,4,200,50)
-		if(Settings1I == 2 && Settings1P == 0)draw_sprite(Spr_Settings_P1Control,5,200,50)
-		if(Settings1I == 2 && Settings1P == 1)draw_sprite(Spr_Settings_P1Control,6,200,50)
-		if(Settings1I == 3 && Settings1P == 0)draw_sprite(Spr_Settings_P1Control,7,200,50)
-		if(Settings1I == 3 && Settings1P == 1)draw_sprite(Spr_Settings_P1Control,8,200,50)
-		if(Settings1I == 4 && Settings1P == 0)draw_sprite(Spr_Settings_P1Control,9,200,50)
-		if(Settings1I == 4 && Settings1P == 1)draw_sprite(Spr_Settings_P1Control,10,200,50)
-		if(Settings1I == 5 && Settings1P == 0)draw_sprite(Spr_Settings_P1Control,11,200,50)
-		if(Settings1I == 5 && Settings1P == 1)draw_sprite(Spr_Settings_P1Control,12,200,50)
-		if(Settings1I == 6 && Settings1P == 0)draw_sprite(Spr_Settings_P1Control,13,200,50)
-		if(Settings1I == 6 && Settings1P == 1)draw_sprite(Spr_Settings_P1Control,14,200,50)
-		if(Settings1I == 7 )draw_sprite(Spr_Settings_P1Control,15,200,50)
-		if(Settings1I == 8 )
-			{
-				draw_sprite(Spr_Settings_P1Control,0,200,50);
-				draw_sprite(Spr_Leave,15,800,1000);
-				if(global.EntryP1 or global.EntryP2)global.CurrentPlace = "TitleScreen";
-			}
-
-		if(!ControlSet)
-			{
-				if (global.DownMoveP1)
-					{
-						if (Settings1I ==8) Settings1I = -1;
-						if (Settings1I < 9) Settings1I += 1; 
-					}
-			
-				if (global.UpMoveP1)
-					{
-				if (Settings1I == 0) Settings1I = 9;
-				if (Settings1I > 0) Settings1I -= 1; 
-					}
+		//Draw sprite constant
+		draw_sprite(Spr_Settings_Control,image_index,120,50);
+		draw_sprite(Spr_Settings_Leave,image_index,120,70);
 		
-				if (global.RightMoveP1)
+		//cas par cas en fonction de la pos
+		if(SettingsI1 == 0)
+			{
+				draw_sprite(Spr_Settings_Cadre_Leave,image_index,120,50);
+				if(global.EntryP1)
 					{
-						if (Settings1P < 2) Settings1P++;
-						if (Settings1P == 2) Settings1P = 0; 	
+						SettingsI1 = 0;
+						global.CurrentPlace = "KeyRebinding"
+					}
+			}
+		if(SettingsI1 == 1)
+			{
+				draw_sprite(Spr_Settings_Cadre_Leave,image_index,120,70);
+				if(global.EntryP1)
+					{
+						global.CurrentPlace = "TitleScreen"
+						global.EntryP1 = false;
+					}
+			}
+			
+		//Pouvoir bouger 	
+		if (global.DownMoveP1 or global.DownMoveP2)
+			{	
+				if (SettingsI1 == 8 )SettingsI1 = -1;
+				if (SettingsI1 >= -1 )SettingsI1 += 1;	
+			}
+		if (global.UpMoveP1 or global.UpMoveP2)
+			{
+				if (SettingsI1 == 0) SettingsI1 = 9;
+				if (SettingsI1 > 0) SettingsI1 -= 1; 
+			}
+		
+		
+		
+		
+		
+	}
+
+
+/////////////////////////////////////KeyRebinding
+if (global.CurrentPlace == "KeyRebinding") 
+	{
+		draw_text(50,0,SettingsI1)
+		draw_text(60,0,SettingsP1)
+		draw_sprite(Spr_Settings_Leave,image_index,150,140)
+	
+		if (global.RightMoveP1 or global.RightMoveP2)
+			{
+				if(SettingsI1 ==0)
+				{
+					if (SettingsP1 == 3) SettingsP1 = -1;
+					if (SettingsP1 < 3) SettingsP1 += 1; 
+				}
+				else
+				{
+					if (SettingsP1 == 1) SettingsP1 = -1;
+					if (SettingsP1 < 1) SettingsP1 += 1; 
+				}
+			}
+		if (global.LeftMoveP1 or global.LeftMoveP2)
+			{
+				if(SettingsI1 ==0)
+				{
+					if (SettingsP1 == 0) SettingsP1 = 3;
+					if (SettingsP1 > 0)  SettingsP1 -= 1; 
+				}
+				else
+				{
+					if (SettingsP1 == 0) SettingsP1 = 2;
+					if (SettingsP1 > 0)  SettingsP1 -= 1; 
+				}
+			}
+		if (global.DownMoveP1 or global.DownMoveP2)
+			{	
+				if (SettingsI1 == 0)SettingsP1 = 0;	
+				if (SettingsI1 == 8 )SettingsI1 = -1;
+				if (SettingsI1 >= -1 )SettingsI1 += 1;	
+			
+		
+			}
+		if (global.UpMoveP1 or global.UpMoveP2)
+			{
+				if (SettingsI1 == 0) SettingsI1 = 9;
+				if (SettingsI1 > 0) SettingsI1 -= 1; 
+			}
+		
+		
+		
+		if(SettingsI1 == 0)
+			{
+				draw_sprite(Spr_Settings_GameplayType2,image_index,40,40);
+				if(global.GameplayTypeP1 == "Keyboard")
+					{
+						if(global.LeftMoveP1)
+							{
+								global.GameplayTypeP1 = "Controller";
+								global.LeftMoveP1 = false;
+							}
+						if(global.RightMoveP1)
+							{
+								global.GameplayTypeP1 = "Mouse";	
+								global.RightMoveP1 = false;
+							}
+					}
+				if(global.GameplayTypeP1 == "Mouse")
+					{
+						if(global.LeftMoveP1)
+							{
+								global.GameplayTypeP1 = "Keyboard";
+								global.LeftMoveP1 = false;
+							}
+						if(global.RightMoveP1)
+							{
+								global.GameplayTypeP1 = "Controller";		
+								global.RightMoveP1 = false;
+							}
+					}
+				if(global.GameplayTypeP1 == "Controller")
+					{
+						if(global.LeftMoveP1)
+							{
+								global.GameplayTypeP1 = "Mouse";
+								global.LeftMoveP1 = false;
+							}
+						if(global.RightMoveP1)
+							{
+								global.GameplayTypeP1 = "Keyboard";		
+								global.RightMoveP1 = false;
+							}
+					}
+			}
+		if(global.GameplayTypeP1 == "Keyboard")
+			{
+				draw_sprite(Spr_Settings_GameplayType,0,40,40)
+			//Controles Clavier
+				
+			    if(SettingsI1 == 1 && SettingsP1 == 0)draw_sprite(Spr_Settings_Cadre,image_index,20,50)
+				if(SettingsI1 == 1 && SettingsP1 == 1)draw_sprite(Spr_Settings_Cadre,image_index,50,50)
+				if(SettingsI1 == 2 && SettingsP1 == 0)draw_sprite(Spr_Settings_Cadre,image_index,20,65)
+				if(SettingsI1 == 2 && SettingsP1 == 1)draw_sprite(Spr_Settings_Cadre,image_index,50,65)
+				if(SettingsI1 == 3 && SettingsP1 == 0)draw_sprite(Spr_Settings_Cadre,image_index,20,80)
+				if(SettingsI1 == 3 && SettingsP1 == 1)draw_sprite(Spr_Settings_Cadre,image_index,50,80)
+				if(SettingsI1 == 4 && SettingsP1 == 0)draw_sprite(Spr_Settings_Cadre,image_index,20,95)
+				if(SettingsI1 == 4 && SettingsP1 == 1)draw_sprite(Spr_Settings_Cadre,image_index,50,95)
+				if(SettingsI1 == 5 && SettingsP1 == 0)draw_sprite(Spr_Settings_Cadre,image_index,20,110)
+				if(SettingsI1 == 5 && SettingsP1 == 1)draw_sprite(Spr_Settings_Cadre,image_index,50,110)
+				if(SettingsI1 == 6 && SettingsP1 == 0)draw_sprite(Spr_Settings_Cadre,image_index,20,125)
+				if(SettingsI1 == 6 && SettingsP1 == 1)draw_sprite(Spr_Settings_Cadre,image_index,50,125)
+				if(SettingsI1 == 7 && SettingsP1 == 0)draw_sprite(Spr_Settings_Cadre,image_index,20,140)
+				if(SettingsI1 == 7 && SettingsP1 == 1)draw_sprite(Spr_Settings_Cadre,image_index,50,140)
+				if(SettingsI1 == 8 )
+				{
+					draw_sprite(Spr_Settings_Cadre_Leave,image_index,150,140)
+					if(global.EntryP1)
+						{
+							global.CurrentPlace = "Settings";
+							SettingsI1 = 0 ;
+							SettingsP1 = 0 ;
+							
+						}
 					}
 				
-				if (global.LeftMoveP1)
-					{	
-						if (Settings1P > -1) Settings1P--; 	
-						if (Settings1P == -1) Settings1P = 1;	
-					}
-			}	
-		if (Settings1I == 6 && global.EntryP1)global.CurrentPlace = "TitleScreen";
+				
+				draw_text(20,50,chr(global.UpControlP1))
+				draw_text(20,65,chr(global.DownControlP1))
+				draw_text(20,80,chr(global.LeftControlP1))
+				draw_text(20,95,chr(global.RightControlP1))
+				draw_text(50,50,chr(global.UpControlC1))
+				draw_text(50,65,chr(global.DownControlC1))
+				draw_text(50,80,chr(global.LeftControlC1))
+				draw_text(50,95,chr(global.RightControlC1))
+				draw_text(20,110,chr(global.MainSpellControlP1))
+				draw_text(20,125,chr(global.DodgeSpellControlP1))
+				draw_text(50,110,chr(global.LeftSpellControlP1))
+				draw_text(50,125,chr(global.RightSpellControlP1))
+				draw_text(20,140,chr(global.SwapControlP1))
+				draw_text(50,140,chr(global.EntryControlP1))
+			
+			}
+		if(global.GameplayTypeP1 == "Mouse")
+			{
+				draw_sprite(Spr_Settings_GameplayType,1,40,40)
+			}
+		
+		if(global.GameplayTypeP1 == "Controller")
+			{
+				draw_sprite(Spr_Settings_GameplayType,2,40,40)
+			}
+			
 	}
 
 ///////////////////////////////// Script Title_Screen
@@ -85,36 +201,35 @@ if (global.CurrentPlace == "TitleScreen")
 	{
 	
 		Game_Selection_PVE = 0;
-		Settings1I = 0;
-		Settings1P = 0;
+	
 		//Drawing the interface
 		
 		
 		// Drawing the pointeur on the right place
 		if (Title_Screen == 0) 
 			{
-				draw_sprite(spr_pointeur,image_index,164,170);
-				draw_sprite(spr_Titlescreen_Selection , 0 ,112,204);
+				draw_sprite(spr_pointeur,image_index,110,115);
+				draw_sprite(spr_Titlescreen_Selection , 0 ,80,143);
 			}
 		if (Title_Screen == 1) 
 			{
-				draw_sprite(spr_pointeur,image_index,196,170);
-				draw_sprite(spr_Titlescreen_Selection , 1 ,112,204);
+				draw_sprite(spr_pointeur,image_index,142,115);
+				draw_sprite(spr_Titlescreen_Selection , 1 ,80,143);
 			}
 		if (Title_Screen == 2) 
 			{
-				draw_sprite(spr_pointeur,image_index,228,170);
-				draw_sprite(spr_Titlescreen_Selection , 2 ,112,204);
+				draw_sprite(spr_pointeur,image_index,174,115);
+				draw_sprite(spr_Titlescreen_Selection , 2 ,80,143);
 			}
 		if (Title_Screen == 3) 
 			{
-				draw_sprite(spr_pointeur,image_index,260,170);
-				draw_sprite(spr_Titlescreen_Selection , 3 ,112,204);
+				draw_sprite(spr_pointeur,image_index,206,115);
+				draw_sprite(spr_Titlescreen_Selection , 3 ,80,143);
 			}
 		if (Title_Screen == 4) 
 			{
-				draw_sprite(spr_pointeur,image_index,292,170);
-				draw_sprite(spr_Titlescreen_Selection , 4 ,112,204);
+				draw_sprite(spr_pointeur,image_index,238,115);
+				draw_sprite(spr_Titlescreen_Selection , 4 ,80,143);
 			}
 		//Check Where the Pointeur is and where we should go when we press enter
 		if (global.RightMoveP1 or global.RightMoveP2)
@@ -158,18 +273,18 @@ if(global.CurrentPlace == "TitleScreen_PVE")
 		//Drawing the Interface for the pve and the pointeur
 		if (Game_Selection_PVE == 0) 
 			{
-				draw_sprite(Spr_TitleScreen_Create , 0 ,90,204)
-				draw_sprite(spr_pointeur,image_index,206,170);
+				draw_sprite(Spr_TitleScreen_Create , 0 ,100,143);
+				draw_sprite(spr_pointeur,image_index,130,115);
 			}
 		if (Game_Selection_PVE  == 1)
 			{
-				draw_sprite(Spr_TitleScreen_Create , 1 ,90,204)
-				draw_sprite(spr_pointeur,image_index,238,170);
+				draw_sprite(Spr_TitleScreen_Create , 1 ,100,143)
+				draw_sprite(spr_pointeur,image_index,162,115);
 			}
 		if (Game_Selection_PVE  == 2) 
 			{
-				draw_sprite(Spr_TitleScreen_Create , 2 ,90,204)
-				draw_sprite(spr_pointeur,image_index,270,170);
+				draw_sprite(Spr_TitleScreen_Create , 2 ,100,143)
+				draw_sprite(spr_pointeur,image_index,194,115);
 			}
 
 		if (global.RightMoveP1 or global.RightMoveP2)
@@ -207,23 +322,23 @@ if(global.CurrentPlace == "NewPVE")
 
 		if (Multiplayer_PVE == 0)
 			{
-				draw_sprite(spr_pointeur,image_index,174,170);
-				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 0 ,90,204)
+				draw_sprite(spr_pointeur,image_index,110,115);
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 0 ,80,143)
 			}
 		if (Multiplayer_PVE == 1)
 			{
-				draw_sprite(spr_pointeur,image_index,206,170);
-				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 1 ,90,204)
+				draw_sprite(spr_pointeur,image_index,142,115);
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 1 ,80,143)
 			}
 		if (Multiplayer_PVE == 2)
 			{
-				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 2 ,90,204)
-				draw_sprite(spr_pointeur,image_index,238,170);
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 2 ,80,143)
+				draw_sprite(spr_pointeur,image_index,174,115);
 			}
 		if (Multiplayer_PVE == 3)
 			{
-				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 3 ,90,204)
-				draw_sprite(spr_pointeur,image_index,270,170);
+				draw_sprite(Spr_TitleScreen_NumberOfPlayer , 3 ,80,143)
+				draw_sprite(spr_pointeur,image_index,206,115);
 			}
 		if (global.RightMoveP1 or global.RightMoveP2)
 			{

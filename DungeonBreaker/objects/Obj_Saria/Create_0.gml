@@ -1,13 +1,14 @@
 /// Initialize Variable
 event_inherited()
-MovingUCharacterSelec_P= 0;
-MovingDown = 0;
-MovingLeft = 0;
-MovingRight = 0;
+LeftSpellCd = false;
+RightSpellCd = false;
+DodgeSpellCd = false;
+MainSpellCd = false;
+HorizontalSpeed = 3;
+VerticalSpeed = 2;
+ChargeMax_Right = room_speed * 5;
+Charge_Right = 0;
+State =  Scr_SariaP1_Movement;
 
-image_speed =0
-image_index = 0
-HorizontalSpeed = 4;
-VerticalSpeed = 3;
-if (Player1_0 == Obj_Saria) Player = 1
-if (Player2_0 == Obj_Saria) Player = 2
+if (global.Player1_0 == Obj_Saria or global.Player1_1 == Obj_Saria) Player = 1
+if (global.Player2_0 == Obj_Saria or global.Player2_1 == Obj_Saria) Player = 2

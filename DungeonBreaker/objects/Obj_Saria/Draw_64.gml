@@ -1,0 +1,1 @@
+draw_text(500,500,point_direction(x,y,Obj_Cursor1.x,Obj_Cursor1.y))

@@ -1,12 +1,7 @@
-
-2 perso a jouer en meme temps et swaCharacterSelec_Prapidement
-
 Barre de Score
 
-Click gauche
-Click droit
 
-R Dodge spécial pour chaque perso 
+
 Espace pour dézoumer
 
  Couleur proj

@@ -1,1 +1,0 @@
-direction= direction *image_angle

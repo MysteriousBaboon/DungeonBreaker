@@ -5,8 +5,7 @@
     "name": "1ae271aa-8855-40fc-a5c6-858cff1092df",
     "children": [
         "16da3008-8bf8-4d17-a1ce-ced949ad7b24",
-        "d9754734-7515-48e7-ada0-596857191e9e",
-        "2694027f-f9e5-4674-9f12-1a1e5c364460"
+        "d9754734-7515-48e7-ada0-596857191e9e"
     ],
     "filterType": "GMSprite",
     "folderName": "Monstre",
